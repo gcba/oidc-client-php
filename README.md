@@ -1,6 +1,6 @@
 Cliente OpenID Connect PHP 5
 ============================
-Esta libreria permite que una aplicación autentique a un usuario a traves del protocolo OpenID Connect.
+Esta libreria permite que una aplicación identifiqué a un usuario a través del protocolo OpenID Connect.
 
 # Requerimientos
  1. PHP 5.2 or greater 
