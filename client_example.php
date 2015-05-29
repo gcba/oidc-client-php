@@ -21,24 +21,20 @@
  *
  */
 
-ini_set('display_errors',1);
-ini_set('display_startup_errors',1);
-error_reporting(-1);
-
 require "OpenIDConnectClient.php5";
 
-$oidc = new OpenIDConnectClient('http://localhost:8000/openid',
-                                '555',
-                                '555');
+$oidc = new OpenIDConnectClient('https://provider.com/openid',
+                                'client_id',
+                                'secret_id');
 
 $oidc->authenticate();
 $email = $oidc->requestUserInfo('email');
-
+$given_name = $oidc->requestUserInfo('given_name');
 ?>
 
 <html>
 <head>
-    <title>Example OpenID Connect Client Use</title>
+    <title>Ejemplo del Cliente OpenID Connect</title>
     <style>
         body {
             font-family: 'Lucida Grande', Verdana, Arial, sans-serif;
@@ -48,9 +44,9 @@ $email = $oidc->requestUserInfo('email');
 <body>
 
     <div>
-        Hello <?php echo $email; ?>
+        Hola <?php echo $given_name; ?><br>
+        Tu correo electrónico es <?php echo $email; ?>
     </div>
 
 </body>
 </html>
-
