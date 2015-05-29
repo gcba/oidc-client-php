@@ -27,12 +27,13 @@ error_reporting(-1);
 
 require "OpenIDConnectClient.php5";
 
-$oidc = new OpenIDConnectClient('http://localhost:8000/openid',
-                                '555',
-                                '555');
+$oidc = new OpenIDConnectClient('https://id.gcba.gob.ar/openid',
+                                '35883451',
+                                '34bbd2a8d4f64ee7824efa5e31f59658');
 
 $oidc->authenticate();
 $email = $oidc->requestUserInfo('email');
+$given_name = $oidc->requestUserInfo('given_name');
 
 ?>
 
@@ -48,7 +49,8 @@ $email = $oidc->requestUserInfo('email');
 <body>
 
     <div>
-        Hello <?php echo $email; ?>
+        Hello <?php echo $given_name; ?><br>
+        Your email is <?php echo $email; ?>
     </div>
 
 </body>
