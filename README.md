@@ -19,4 +19,7 @@ $oidc->authenticate();
 $email = $oidc->requestUserInfo('email');
 ```
 
+En el ejemplo obtenemos el `email`, pero tambíen se pueden traer otros campos. El listado completo se encuentra [aquí](http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims).
+
+
 Basado en [jumbojett/OpenID-Connect-PHP](https://github.com/jumbojett/OpenID-Connect-PHP).
