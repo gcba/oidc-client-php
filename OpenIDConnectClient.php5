@@ -304,7 +304,7 @@ class OpenIDConnectClient
             'redirect_uri' => $this->getRedirectURL(),
             'client_id' => $this->clientID,
             'state' => $state,
-            'scope' => 'openid email'
+            'scope' => 'openid email profile'
         ));
 
         // If the client has been registered with additional scopes
