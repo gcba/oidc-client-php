@@ -28,6 +28,7 @@ $oidc = new OpenIDConnectClient('https://provider.com/openid',
                                 'secret_id');
 
 $oidc->authenticate();
+$oidc->addScope("openid email profile address phone");
 $email = $oidc->requestUserInfo('email');
 $given_name = $oidc->requestUserInfo('given_name');
 ?>

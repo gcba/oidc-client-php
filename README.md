@@ -14,6 +14,7 @@ $oidc = new OpenIDConnectClient('https://id.buenosaires.gob.ar/openid',
                                 'client-id',
                                 'client-secret');
 
+$oidc->addScope("openid email profile address phone");
 $oidc->authenticate();
 
 $email = $oidc->requestUserInfo('email');
