@@ -31,6 +31,7 @@ $oidc->authenticate();
 $oidc->addScope("openid email profile address phone");
 $email = $oidc->requestUserInfo('email');
 $given_name = $oidc->requestUserInfo('given_name');
+$address = $oidc->requestUserInfo('address');
 ?>
 
 <html>
@@ -46,7 +47,9 @@ $given_name = $oidc->requestUserInfo('given_name');
 
     <div>
         Hola <?php echo $given_name; ?><br>
-        Tu correo electrónico es <?php echo $email; ?>
+        Tu correo electrónico es <?php echo $email; ?><br>
+        Tu domicilio es <?php echo $$address->street_address; ?><br>
+        Tu codigo postal es <?php echo $$address->postal_code; ?>
     </div>
 
 </body>

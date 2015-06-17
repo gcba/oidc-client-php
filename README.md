@@ -19,6 +19,10 @@ $oidc->authenticate();
 
 $email = $oidc->requestUserInfo('email');
 $given_name = $oidc->requestUserInfo('given_name');
+
+$address = $oidc->requestUserInfo('address');
+echo $address->street_address;
+echo $address->postal_code;
 ```
 
 ![Ejemplo](http://i.imgur.com/twCufc1.png?1)
