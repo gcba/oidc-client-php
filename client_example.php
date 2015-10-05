@@ -27,8 +27,8 @@ $oidc = new OpenIDConnectClient('https://provider.com/openid',
                                 'client_id',
                                 'secret_id');
 
-$oidc->authenticate();
 $oidc->addScope("openid email profile address phone");
+$oidc->authenticate();
 $email = $oidc->requestUserInfo('email');
 $given_name = $oidc->requestUserInfo('given_name');
 $address = $oidc->requestUserInfo('address');
@@ -48,8 +48,8 @@ $address = $oidc->requestUserInfo('address');
     <div>
         Hola <?php echo $given_name; ?><br>
         Tu correo electrónico es <?php echo $email; ?><br>
-        Tu domicilio es <?php echo $$address->street_address; ?><br>
-        Tu codigo postal es <?php echo $$address->postal_code; ?>
+        Tu domicilio es <?php echo $address->street_address; ?><br>
+        Tu codigo postal es <?php echo $address->postal_code; ?>
     </div>
 
 </body>
